@@ -68,6 +68,7 @@ class LoginFormController: UIViewController {
         // Проверяем, верны ли они
         if login == "admin" && password == "123456" {
             print("Успешная авторизация")
+            self.performSegue(withIdentifier: "openApp", sender: nil)
         } else {
             print("Неуспешная авторизация")
         }
