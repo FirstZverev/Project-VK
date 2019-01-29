@@ -13,6 +13,7 @@ class LoginFormController: UIViewController {
     @IBOutlet weak var loginInput: UITextField!
     @IBOutlet weak var passwordInput: UITextField!
     @IBOutlet weak var loginButton: UIButton!
+    
 
     // Когда клавиатура появляется
     @objc func keyboardWasShown(notification: Notification) {
@@ -73,7 +74,6 @@ class LoginFormController: UIViewController {
             print("Неуспешная авторизация")
         }
     }
-
 
 
     /*
