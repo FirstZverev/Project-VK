@@ -48,7 +48,7 @@ class MyGroupTableViewController: UITableViewController {
             // Получаем индекс выделенной ячейки
             if let indexPath = GroupTableViewController.tableView.indexPathForSelectedRow {
                 // Получаем город по индексу
-                let group = GroupTableViewController.allGroup[indexPath.row]
+                let group = GroupTableViewController.filteredGroup[indexPath.row]
                 if !myGroup.contains(group) {
                 // Добавляем город в список выбранных городов
                 myGroup.append(group)

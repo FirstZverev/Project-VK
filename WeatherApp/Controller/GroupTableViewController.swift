@@ -11,9 +11,6 @@ import UIKit
 class GroupTableViewController: UITableViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
-    
-    var searchActive : Bool = false
-    var filtered:[String] = []
     var allGroup = [
         "Мир позитива",
         "Мир программистов",
@@ -26,33 +23,53 @@ class GroupTableViewController: UITableViewController {
         "Мир вокруг нас",
         "Мир пикселей",
     ]
+    var filteredGroup = [String]()
     
-
+    func filter(query: String) {
+        self.filteredGroup.removeAll()
+        for group in self.allGroup {
+            var isInFilter = true
+            if query.count == 0 {
+                isInFilter = true
+                self.filteredGroup.append(group)
+            } else {
+                if query.count > 0 {
+                    isInFilter = group.lowercased().contains(query.lowercased())
+                }
+                if isInFilter {
+                    self.filteredGroup.append(group)
+                }
+            }
+        }
+        self.tableView.reloadData()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-//        searchBar.delegate = self
+        filter(query: "")
+        
+        //        searchBar.delegate = self
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    
-    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
-        searchActive = true;
-    }
-    
-    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
-        searchActive = false;
-    }
-    
-    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
-        searchActive = false;
-    }
-    
-    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        searchActive = false;
-    }
+//
+//    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+//        searchActive = true;
+//    }
+//
+//    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
+//        searchActive = false;
+//    }
+//
+//    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+//        searchActive = false;
+//    }
+//
+//    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+//        searchActive = false;
+//    }
 
 
     // MARK: - Table view data source
@@ -63,15 +80,12 @@ class GroupTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if(searchActive) {
-            return filtered.count
-        }
-        return allGroup.count;
+        return filteredGroup.count;
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "itemGroup", for: indexPath) as! GroupTableViewCell
-        cell.labelGroup.text = allGroup[indexPath.row]
+        cell.labelGroup.text = filteredGroup[indexPath.row]
         return cell
     }
     /*
@@ -129,21 +143,10 @@ class GroupTableViewController: UITableViewController {
     }
     */
 
+//}
 }
-//extension GroupTableViewController: UISearchBarDelegate {
-//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//
-//        filtered = allGroup.filter({ (text) -> Bool in
-//            let tmp: NSString = text as NSString
-//            let range = tmp.rangeOfString(searchText, options: NSString.CompareOptions.CaseInsensitiveSearch)
-//            return range.location != NSNotFound
-//        })
-//        if(filtered.count == 0){
-//            searchActive = false
-//        } else {
-//            searchActive = true
-//        }
-//        self.tableView.reloadData()
-//}
-//}
-
+extension GroupTableViewController: UISearchBarDelegate {
+   func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    self.filter(query: searchText)
+    }
+}

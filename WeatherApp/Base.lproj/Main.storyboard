@@ -351,7 +351,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.32937717437744141" green="0.32943665981292725" blue="0.32936456799507141" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" barStyle="black" placeholder="Поиск" id="G45-Oj-e1q">
+                        <searchBar key="tableHeaderView" contentMode="redraw" misplaced="YES" barStyle="black" placeholder="Поиск" id="G45-Oj-e1q">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <color key="barTintColor" red="0.2447174547" green="0.2447174547" blue="0.2447174547" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -492,12 +492,12 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e33-R8-xao">
                                             <rect key="frame" x="20" y="14" width="280" height="29"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_50" translatesAutoresizingMaskIntoConstraints="NO" id="KGm-3b-ch8">
-                                            <rect key="frame" x="122" y="106" width="75" height="75"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="friend200" translatesAutoresizingMaskIntoConstraints="NO" id="KGm-3b-ch8">
+                                            <rect key="frame" x="60" y="67" width="200" height="200"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                     </subviews>
@@ -537,6 +537,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="friend200" width="200" height="200"/>
         <image name="icon30" width="30" height="30"/>
         <image name="iconContacts_30" width="30" height="30"/>
         <image name="iconGroup_30" width="30" height="30"/>
