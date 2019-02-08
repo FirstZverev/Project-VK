@@ -1,15 +1,21 @@
 //
-//  OptionTableViewController.swift
+//  FeedTableViewController.swift
 //  WeatherApp
 //
-//  Created by Володя Зверев on 06.02.2019.
+//  Created by Володя Зверев on 08.02.2019.
 //  Copyright © 2019 Володя Зверев. All rights reserved.
 //
 
 import UIKit
 
-class OptionTableViewController: UITableViewController {
-
+class FeedTableViewController: UITableViewController {
+    
+    
+    @IBOutlet weak var likeButton: LikeButton?
+    
+    @IBAction func likeButtonChanged() {
+        print("likeButtonChanged")
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,26 +30,17 @@ class OptionTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 2
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return 5
     }
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == 0 {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Image", for: indexPath) as! OptionTwoTableViewCell
-            cell.nameLabel.text  =  "Зверев Владимир"
-            cell.cityLabel.text  =  "Москва"
-            cell.ageLabel.text   =  "04.12.1997"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Feeds", for: indexPath) as! FeedTableViewCell
+        cell.feedLabel.text = "Новость про интернет"
         return cell
-        } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "Exit", for: indexPath) as! OptionTableViewCell
-            cell.exit.text = "Выйти из системы"
-            return cell
-        }
     }
 
     /*

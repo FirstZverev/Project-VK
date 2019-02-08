@@ -1,16 +1,16 @@
 //
-//  MyGroupTableViewCell.swift
+//  FeedTableViewCell.swift
 //  WeatherApp
 //
-//  Created by Володя Зверев on 07.02.2019.
+//  Created by Володя Зверев on 08.02.2019.
 //  Copyright © 2019 Володя Зверев. All rights reserved.
 //
 
 import UIKit
 
-class MyGroupTableViewCell: UITableViewCell {
-    @IBOutlet weak var labelMyGroup: UILabel!
-    
+class FeedTableViewCell: UITableViewCell {
+    @IBOutlet weak var feedLabel: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
