@@ -38,6 +38,7 @@ class OptionTableViewController: UITableViewController {
             cell.nameLabel.text  =  "Зверев Владимир"
             cell.cityLabel.text  =  "Москва"
             cell.ageLabel.text   =  "04.12.1997"
+            cell.generalLabel?.text = "Основное"
         return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "Exit", for: indexPath) as! OptionTableViewCell
@@ -45,7 +46,6 @@ class OptionTableViewController: UITableViewController {
             return cell
         }
     }
-
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)

@@ -10,17 +10,28 @@ import UIKit
 
 class FriendsTableViewController: UITableViewController {
     var friends = [
-        "Иван Иванов",
-        "Петр Иванов",
-        "Констонтин Иванов",
-        "Игорь Иванов",
+        "Иван Петров",
+        "Петр Акулов",
+        "Констонтин Жарких",
+        "Игорь Зверев",
         "Алла Иванова",
-        "Александр Иванов",
-        "Татьяна Иванова",
-        "Регина Иванова",
-        "Николай Иванов",
-        "Катерина Иванова"
+        "Александр Дудков",
+        "Татьяна Прокашева",
+        "Регина Зайцева",
+        "Николай Ярица",
+        "Катерина Щеглова"
     ]
+    var imageName = ["FriendMen",
+                     "FriendMen",
+                     "FriendMen",
+                     "FriendMen",
+                     "FriendWomen",
+                     "FriendMen",
+                     "FriendWomen",
+                     "FriendWomen",
+                     "FriendMen",
+                     "FriendWomen",    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -41,6 +52,7 @@ class FriendsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Friends", for: indexPath) as! FriendTableViewCell
         cell.labelPrototip.text = friends[indexPath.row]
+        cell.ImageFriend?.image = UIImage(named: imageName[indexPath.row])
         return cell
     }
     
@@ -104,6 +116,7 @@ class FriendsTableViewController: UITableViewController {
                 print(friends[index])
                 if let dest = segue.destination as? CollectionViewController {
                     dest.friend = friends[index]
+                    dest.image = imageName[index] + "200" //Разрешение 200х200
                 }
             }
         }

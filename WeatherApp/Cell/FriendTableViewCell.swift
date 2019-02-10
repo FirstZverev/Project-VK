@@ -10,6 +10,7 @@ import UIKit
 
 class FriendTableViewCell: UITableViewCell {
     @IBOutlet weak var labelPrototip : UILabel!
+    @IBOutlet weak var ImageFriend: UIImageView?
     
     override func awakeFromNib() {
         super.awakeFromNib()

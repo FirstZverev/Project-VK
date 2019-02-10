@@ -13,6 +13,7 @@ class OptionTwoTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var generalLabel: UILabel?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
