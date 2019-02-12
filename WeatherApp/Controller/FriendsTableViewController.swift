@@ -9,18 +9,18 @@
 import UIKit
 
 class FriendsTableViewController: UITableViewController {
+    
+    
     var friends = [
-        "Иван Петров",
-        "Петр Акулов",
-        "Констонтин Жарких",
-        "Игорь Зверев",
-        "Алла Иванова",
-        "Александр Дудков",
-        "Татьяна Прокашева",
-        "Регина Зайцева",
-        "Николай Ярица",
-        "Катерина Щеглова"
-    ]
+        "И": ["Иван Петров","Игорь Зверев"],
+        "П": ["Петр Акулов"],
+        "К": ["Констонтин Жарких","Катерина Щеглова"],
+        "А": ["Алла Иванова","Александр Дудков"],
+        "Т": ["Татьяна Прокашева"],
+        "Р": ["Регина Зайцева"],
+        "Н": ["Николай Ярица"]
+        ]
+    let alphabet = ["А","Б","В","Г","Д","Е","Ж","З","И","К","Л","М","Н","О","П","Р","С","Т","У","Ф","Х","Ц","Ч","Ш","Щ","Э","Ю","Я"]
     var imageName = ["FriendMen",
                      "FriendMen",
                      "FriendMen",
@@ -31,9 +31,14 @@ class FriendsTableViewController: UITableViewController {
                      "FriendWomen",
                      "FriendMen",
                      "FriendWomen",    ]
+
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -42,16 +47,29 @@ class FriendsTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
      override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return alphabet.count
+    }
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let letter = alphabet[section]
+        if friends[letter] != nil {
+            return alphabet[section]
+        } else {
+        return nil
+        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return friends.count
+        let letter = alphabet[section]
+        let friendsForLetter = friends[letter]
+        return friendsForLetter?.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Friends", for: indexPath) as! FriendTableViewCell
-        cell.labelPrototip.text = friends[indexPath.row]
+        let letter = alphabet[indexPath.section]
+        let friendsForLetter = friends[letter]
+        let name = friendsForLetter?[indexPath.row]
+        cell.labelPrototip?.text = name
         cell.ImageFriend?.image = UIImage(named: imageName[indexPath.row])
         return cell
     }
@@ -112,11 +130,13 @@ class FriendsTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "infoPerson" {
-            if let index = self.tableView.indexPathForSelectedRow?.row {
-                print(friends[index])
+            if let index = self.tableView.indexPathForSelectedRow?.section {
+               // print(friends[index])
                 if let dest = segue.destination as? CollectionViewController {
-                    dest.friend = friends[index]
-                    dest.image = imageName[index] + "200" //Разрешение 200х200
+                    let letter = alphabet[index]
+                    let friendsForLetter = friends[letter]
+                   // dest.friend = friendsForLetter[indexPathForSelectedRow]
+                    //dest.image = imageName[index] + "200" //Разрешение 200х200
                 }
             }
         }
