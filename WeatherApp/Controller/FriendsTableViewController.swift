@@ -68,6 +68,7 @@ class FriendsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Friends", for: indexPath) as! FriendTableViewCell
         let letter = alphabet[indexPath.section]
         let friendsForLetter = friends[letter]
+        
         let name = friendsForLetter?[indexPath.row]
         cell.labelPrototip?.text = name
         cell.ImageFriend?.image = UIImage(named: imageName[indexPath.row])
@@ -130,13 +131,13 @@ class FriendsTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "infoPerson" {
-            if let index = self.tableView.indexPathForSelectedRow?.section {
+            if let index = self.tableView.indexPathForSelectedRow {
                // print(friends[index])
                 if let dest = segue.destination as? CollectionViewController {
-                    let letter = alphabet[index]
+                    let letter = alphabet[index.section]
                     let friendsForLetter = friends[letter]
-                   // dest.friend = friendsForLetter[indexPathForSelectedRow]
-                    //dest.image = imageName[index] + "200" //Разрешение 200х200
+                    dest.friend = (friendsForLetter?[index.row])!
+                    dest.image = imageName[index.row] + "200" //Разрешение 200х200
                 }
             }
         }
