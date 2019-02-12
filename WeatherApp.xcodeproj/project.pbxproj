@@ -8,29 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		490372F821FAE92300A52621 /* LoginFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490372F721FAE92300A52621 /* LoginFormController.swift */; };
-		49056EBD220943FD0013CA12 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49056EBC220943FD0013CA12 /* FriendTableViewCell.swift */; };
-		49056EBF22094AA80013CA12 /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49056EBE22094AA80013CA12 /* FriendsTableViewController.swift */; };
 		4919303A21FA567800CA7AAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4919303921FA567800CA7AAB /* AppDelegate.swift */; };
 		4919303F21FA567800CA7AAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4919303D21FA567800CA7AAB /* Main.storyboard */; };
 		4919304121FA567A00CA7AAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4919304021FA567A00CA7AAB /* Assets.xcassets */; };
 		4919304421FA567A00CA7AAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4919304221FA567A00CA7AAB /* LaunchScreen.storyboard */; };
 		4919304F21FA567B00CA7AAB /* WeatherAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4919304E21FA567B00CA7AAB /* WeatherAppTests.swift */; };
 		4919305A21FA567B00CA7AAB /* WeatherAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4919305921FA567B00CA7AAB /* WeatherAppUITests.swift */; };
-		4928BB97220C16AF0060883D /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4928BB96220C16AF0060883D /* CollectionViewController.swift */; };
-		4928BB99220C16E80060883D /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4928BB98220C16E80060883D /* CollectionViewCell.swift */; };
-		4928BB9F220C1BF80060883D /* GroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4928BB9E220C1BF80060883D /* GroupTableViewController.swift */; };
-		4928BBA2220C1C260060883D /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4928BBA1220C1C250060883D /* GroupTableViewCell.swift */; };
-		4928BBA4220C1F330060883D /* MyGroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4928BBA3220C1F330060883D /* MyGroupTableViewCell.swift */; };
-		4928BBA6220C21850060883D /* MyGroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4928BBA5220C21850060883D /* MyGroupTableViewController.swift */; };
-		4959F527220D6F41001858EC /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4959F526220D6F41001858EC /* Image.swift */; };
-		4959F529220D7103001858EC /* OptionTwoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4959F528220D7103001858EC /* OptionTwoTableViewCell.swift */; };
-		4959F52B220D84B4001858EC /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4959F52A220D84B4001858EC /* UIView.swift */; };
-		4959F52D220D90EA001858EC /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4959F52C220D90EA001858EC /* LikeButton.swift */; };
-		4959F52F220D9122001858EC /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4959F52E220D9122001858EC /* BackButton.swift */; };
-		4959F531220D922B001858EC /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4959F530220D922B001858EC /* FeedTableViewController.swift */; };
-		4959F533220D934C001858EC /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4959F532220D934C001858EC /* FeedTableViewCell.swift */; };
-		49AE6824220B67EE002A5B73 /* OptionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AE6823220B67EE002A5B73 /* OptionTableViewController.swift */; };
-		49AE6826220B6814002A5B73 /* OptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AE6825220B6814002A5B73 /* OptionTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,8 +35,6 @@
 
 /* Begin PBXFileReference section */
 		490372F721FAE92300A52621 /* LoginFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormController.swift; sourceTree = "<group>"; };
-		49056EBC220943FD0013CA12 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
-		49056EBE22094AA80013CA12 /* FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
 		4919303621FA567800CA7AAB /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4919303921FA567800CA7AAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4919303E21FA567800CA7AAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -66,21 +47,6 @@
 		4919305521FA567B00CA7AAB /* WeatherAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4919305921FA567B00CA7AAB /* WeatherAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAppUITests.swift; sourceTree = "<group>"; };
 		4919305B21FA567B00CA7AAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4928BB96220C16AF0060883D /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
-		4928BB98220C16E80060883D /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
-		4928BB9E220C1BF80060883D /* GroupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewController.swift; sourceTree = "<group>"; };
-		4928BBA1220C1C250060883D /* GroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
-		4928BBA3220C1F330060883D /* MyGroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupTableViewCell.swift; sourceTree = "<group>"; };
-		4928BBA5220C21850060883D /* MyGroupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupTableViewController.swift; sourceTree = "<group>"; };
-		4959F526220D6F41001858EC /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
-		4959F528220D7103001858EC /* OptionTwoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionTwoTableViewCell.swift; sourceTree = "<group>"; };
-		4959F52A220D84B4001858EC /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
-		4959F52C220D90EA001858EC /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
-		4959F52E220D9122001858EC /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
-		4959F530220D922B001858EC /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
-		4959F532220D934C001858EC /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
-		49AE6823220B67EE002A5B73 /* OptionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionTableViewController.swift; sourceTree = "<group>"; };
-		49AE6825220B6814002A5B73 /* OptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,12 +102,7 @@
 				4919304021FA567A00CA7AAB /* Assets.xcassets */,
 				4919304221FA567A00CA7AAB /* LaunchScreen.storyboard */,
 				4919304521FA567A00CA7AAB /* Info.plist */,
-				49AE6828220B6829002A5B73 /* Cell */,
-				49AE6827220B681E002A5B73 /* Controller */,
-				4959F526220D6F41001858EC /* Image.swift */,
-				4959F52A220D84B4001858EC /* UIView.swift */,
-				4959F52C220D90EA001858EC /* LikeButton.swift */,
-				4959F52E220D9122001858EC /* BackButton.swift */,
+				490372F721FAE92300A52621 /* LoginFormController.swift */,
 			);
 			path = WeatherApp;
 			sourceTree = "<group>";
@@ -162,34 +123,6 @@
 				4919305B21FA567B00CA7AAB /* Info.plist */,
 			);
 			path = WeatherAppUITests;
-			sourceTree = "<group>";
-		};
-		49AE6827220B681E002A5B73 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				49056EBE22094AA80013CA12 /* FriendsTableViewController.swift */,
-				49AE6823220B67EE002A5B73 /* OptionTableViewController.swift */,
-				490372F721FAE92300A52621 /* LoginFormController.swift */,
-				4928BB96220C16AF0060883D /* CollectionViewController.swift */,
-				4928BB9E220C1BF80060883D /* GroupTableViewController.swift */,
-				4928BBA5220C21850060883D /* MyGroupTableViewController.swift */,
-				4959F530220D922B001858EC /* FeedTableViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		49AE6828220B6829002A5B73 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				49AE6825220B6814002A5B73 /* OptionTableViewCell.swift */,
-				49056EBC220943FD0013CA12 /* FriendTableViewCell.swift */,
-				4928BB98220C16E80060883D /* CollectionViewCell.swift */,
-				4928BBA1220C1C250060883D /* GroupTableViewCell.swift */,
-				4928BBA3220C1F330060883D /* MyGroupTableViewCell.swift */,
-				4959F528220D7103001858EC /* OptionTwoTableViewCell.swift */,
-				4959F532220D934C001858EC /* FeedTableViewCell.swift */,
-			);
-			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,25 +256,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49AE6824220B67EE002A5B73 /* OptionTableViewController.swift in Sources */,
-				4928BB9F220C1BF80060883D /* GroupTableViewController.swift in Sources */,
-				4959F533220D934C001858EC /* FeedTableViewCell.swift in Sources */,
-				49056EBD220943FD0013CA12 /* FriendTableViewCell.swift in Sources */,
-				4959F529220D7103001858EC /* OptionTwoTableViewCell.swift in Sources */,
-				4928BBA4220C1F330060883D /* MyGroupTableViewCell.swift in Sources */,
-				4928BB99220C16E80060883D /* CollectionViewCell.swift in Sources */,
-				4959F52F220D9122001858EC /* BackButton.swift in Sources */,
-				49AE6826220B6814002A5B73 /* OptionTableViewCell.swift in Sources */,
-				4959F527220D6F41001858EC /* Image.swift in Sources */,
-				4928BBA6220C21850060883D /* MyGroupTableViewController.swift in Sources */,
 				4919303A21FA567800CA7AAB /* AppDelegate.swift in Sources */,
-				4959F52B220D84B4001858EC /* UIView.swift in Sources */,
-				4928BB97220C16AF0060883D /* CollectionViewController.swift in Sources */,
-				4959F531220D922B001858EC /* FeedTableViewController.swift in Sources */,
-				4959F52D220D90EA001858EC /* LikeButton.swift in Sources */,
-				49056EBF22094AA80013CA12 /* FriendsTableViewController.swift in Sources */,
 				490372F821FAE92300A52621 /* LoginFormController.swift in Sources */,
-				4928BBA2220C1C260060883D /* GroupTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

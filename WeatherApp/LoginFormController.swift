@@ -14,10 +14,6 @@ class LoginFormController: UIViewController {
     @IBOutlet weak var passwordInput: UITextField!
     @IBOutlet weak var loginButton: UIButton!
 
-    @IBAction func logoutAction(segue: UIStoryboardSegue?) {
-        
-    }
-
     // Когда клавиатура появляется
     @objc func keyboardWasShown(notification: Notification) {
         
@@ -70,13 +66,13 @@ class LoginFormController: UIViewController {
         let password = passwordInput.text!
         
         // Проверяем, верны ли они
-        if login == "" && password == "" {
+        if login == "admin" && password == "123456" {
             print("Успешная авторизация")
-            self.performSegue(withIdentifier: "openApp", sender: nil)
         } else {
             print("Неуспешная авторизация")
         }
     }
+
 
 
     /*
