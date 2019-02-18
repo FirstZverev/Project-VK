@@ -20,17 +20,13 @@ class FriendsTableViewController: UITableViewController {
         "Р": ["Регина Зайцева"],
         "Н": ["Николай Ярица"]
         ]
+    var friendsP = ["Иван Петров","Игорь Зверев","Констонтин Жарких","Александр Дудков","Николай Ярица","Петр Акулов"]
+//        "Ж": ["Алла Иванова","Катерина Щеглова","Татьяна Прокашева","Регина Зайцева"],
+
+    
+    
     let alphabet = ["А","Б","В","Г","Д","Е","Ж","З","И","К","Л","М","Н","О","П","Р","С","Т","У","Ф","Х","Ц","Ч","Ш","Щ","Э","Ю","Я"]
-    var imageName = ["FriendMen",
-                     "FriendMen",
-                     "FriendMen",
-                     "FriendMen",
-                     "FriendWomen",
-                     "FriendMen",
-                     "FriendWomen",
-                     "FriendWomen",
-                     "FriendMen",
-                     "FriendWomen",    ]
+    var imageName = ["FriendMen","FriendWomen"]
 
     
 
@@ -68,10 +64,13 @@ class FriendsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Friends", for: indexPath) as! FriendTableViewCell
         let letter = alphabet[indexPath.section]
         let friendsForLetter = friends[letter]
-        
         let name = friendsForLetter?[indexPath.row]
         cell.labelPrototip?.text = name
-        cell.ImageFriend?.image = UIImage(named: imageName[indexPath.row])
+        if friendsP.contains(name!) {
+            cell.ImageFriend?.image = UIImage(named: imageName[0])
+        } else {
+            cell.ImageFriend?.image = UIImage(named: imageName[1])
+        }
         return cell
     }
     
@@ -137,13 +136,25 @@ class FriendsTableViewController: UITableViewController {
                     let letter = alphabet[index.section]
                     let friendsForLetter = friends[letter]
                     dest.friend = (friendsForLetter?[index.row])!
-                    dest.image = imageName[index.row] + "200" //Разрешение 200х200
+                    if friendsP.contains((friendsForLetter?[index.row])!){
+                        dest.image = imageName[0] + "200" //Разрешение 200х200
+                        dest.sex = "Пол: Мужской"
+                    } else {
+                        dest.image = imageName[1] + "200" //Разрешение 200х200
+                        dest.sex = "Пол: Женский"
+                    }
                 }
             }
         }
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
+    
 
     
 }
+//extension FriendsTableViewController: UISearchBarDelegate {
+//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+////        self.filter(query: searchText)
+//    }
+//}
