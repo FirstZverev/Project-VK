@@ -31,8 +31,16 @@ class FeedTableViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Feeds", for: indexPath) as! FeedTableViewCell
-        cell.feedLabel.text = "Новость про интернет"
+        cell.feedLabel.text = "Новость про интернет \(indexPath.row + 1)"
+        cell.photoFeed?.image = UIImage(named: "images\(indexPath.row)")
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let scroll = cell as! FeedTableViewCell
+        UIView.animate(withDuration: 0.3){
+            scroll.contentViewFeed?.alpha = 1
+        }
     }
 
 
