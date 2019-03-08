@@ -52,9 +52,6 @@ class CollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "itemCollection", for: indexPath) as! CollectionViewCell
         cell.labelName?.text = self.friend
         cell.labelImage?.image = UIImage(named: self.image)

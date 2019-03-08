@@ -445,8 +445,7 @@
                                             <rect key="frame" x="0.0" y="50" width="375" height="200"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <connections>
-                                                <action selector="buttonClick" destination="Kig-dM-4qp" eventType="touchDown" id="Go3-mX-CuF"/>
-                                                <action selector="buttonClickCancel" destination="Kig-dM-4qp" eventType="touchUpInside" id="v7q-JB-X8o"/>
+                                                <segue destination="BBD-dZ-cu0" kind="custom" identifier="HintsSegue" customClass="HintsSegue" customModule="WeatherApp" customModuleProvider="target" id="9Ca-NA-MHU"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -470,6 +469,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c6O-d7-yvE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3708" y="1307.4962518740631"/>
+        </scene>
+        <!--Hints View Controller-->
+        <scene sceneID="ecU-fI-1QG">
+            <objects>
+                <viewController id="BBD-dZ-cu0" customClass="HintsViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zXc-Sz-iqX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="feed200" translatesAutoresizingMaskIntoConstraints="NO" id="lAY-vZ-Zwb">
+                                <rect key="frame" x="0.0" y="233.5" width="375" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="Lfi-X4-hik"/>
+                                    <constraint firstAttribute="height" constant="200" id="n4m-3W-crj"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="lAY-vZ-Zwb" firstAttribute="centerY" secondItem="zXc-Sz-iqX" secondAttribute="centerY" id="S7t-5b-wsK"/>
+                            <constraint firstItem="lAY-vZ-Zwb" firstAttribute="centerX" secondItem="zXc-Sz-iqX" secondAttribute="centerX" id="vci-qU-WrC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="40e-n1-Agg"/>
+                    </view>
+                    <connections>
+                        <outlet property="ImageFeed" destination="lAY-vZ-Zwb" id="B2g-oo-Rkv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zeK-1d-LJL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4609" y="1307"/>
         </scene>
         <!--Мои Группы-->
         <scene sceneID="3Rn-vj-h4i">

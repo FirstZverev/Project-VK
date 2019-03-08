@@ -9,6 +9,21 @@
 import UIKit
 
 class FeedTableViewController: UITableViewController {
+    let router = Router()
+
+    @objc func presentBySwipe() {
+        self.router.openHints()
+    }
+    
+    var imageNameFeed = [
+        "images0",
+        "images1",
+        "images2",
+        "images3",
+        "images4"
+    ]
+    @IBOutlet weak var hintsButton: UIButton?
+
     @IBOutlet weak var likeButton: LikeButton?
     
     @IBAction func likeButtonChanged() {
@@ -16,6 +31,9 @@ class FeedTableViewController: UITableViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        let swipe = UISwipeGestureRecognizer(target: self, action: #selector(presentBySwipe))
+        swipe.direction = .right
+        self.view.addGestureRecognizer(swipe)
     }
 
     // MARK: - Table view data source
@@ -98,5 +116,15 @@ class FeedTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "HintsSegue" {
+            if let index = self.tableView.indexPathForSelectedRow {
+                // print(friends[index])
+                if let dest = segue.destination as? HintsViewController {
+                    dest.imageHintsFeed = imageNameFeed[index.row]
+                }
+            }
+        }
+    }
 
 }

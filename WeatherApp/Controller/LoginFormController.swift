@@ -22,6 +22,8 @@ class LoginFormController: UIViewController {
     @IBOutlet weak var hintLabelWidthConstraint: NSLayoutConstraint?
     @IBOutlet weak var hintLabelHeightConstraint: NSLayoutConstraint?
     @IBOutlet weak var loader: Loader?
+    
+
 
     @IBAction func logoutAction(segue: UIStoryboardSegue?) {
         self.scrollView?.alpha = 0

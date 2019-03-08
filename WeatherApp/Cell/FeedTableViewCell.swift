@@ -12,8 +12,10 @@ class FeedTableViewCell: UITableViewCell {
     @IBOutlet weak var feedLabel: UILabel!
     @IBOutlet weak var photoFeed: UIImageView?
     @IBOutlet weak var contentViewFeed: UIView?
+
     var i = 0
     var j = 0
+
     @IBAction func buttonClick(){
         i += 1
         print("Начала нажатия:\(i)")
