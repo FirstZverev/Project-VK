@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -42,6 +42,8 @@
 		49BC6DE4221EA76700273E72 /* InteractiveClose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BC6DE3221EA76700273E72 /* InteractiveClose.swift */; };
 		49BC6DE6221EA7A600273E72 /* HintsSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BC6DE5221EA7A600273E72 /* HintsSegue.swift */; };
 		4B91C74A5C04C580B2E1CF76 /* Pods_WeatherAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16B1F1708EB571BCDBCC1A34 /* Pods_WeatherAppTests.framework */; };
+		B5E1B09722D5CBA2004873B0 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E1B09622D5CBA2004873B0 /* WebKit.framework */; };
+		B5E1B09922D5CFBC004873B0 /* VkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E1B09822D5CFBC004873B0 /* VkViewController.swift */; };
 		BFCDAA791B82471E730D933D /* Pods_WeatherApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93F0AB9F0B154205FA6BD568 /* Pods_WeatherApp.framework */; };
 		E82498078D10B40C7B93364C /* Pods_WeatherAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9698405A441A1A84F902C3E3 /* Pods_WeatherAppUITests.framework */; };
 /* End PBXBuildFile section */
@@ -113,6 +115,8 @@
 		89C5DF2BFC6F8A3A2B1A55B1 /* Pods-WeatherApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApp.debug.xcconfig"; path = "Target Support Files/Pods-WeatherApp/Pods-WeatherApp.debug.xcconfig"; sourceTree = "<group>"; };
 		93F0AB9F0B154205FA6BD568 /* Pods_WeatherApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9698405A441A1A84F902C3E3 /* Pods_WeatherAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5E1B09622D5CBA2004873B0 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		B5E1B09822D5CFBC004873B0 /* VkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VkViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5E1B09722D5CBA2004873B0 /* WebKit.framework in Frameworks */,
 				BFCDAA791B82471E730D933D /* Pods_WeatherApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -233,6 +238,7 @@
 				4959F530220D922B001858EC /* FeedTableViewController.swift */,
 				49BC6DD8221EA42F00273E72 /* Router.swift */,
 				49BC6DDA221EA47200273E72 /* HintsViewController.swift */,
+				B5E1B09822D5CFBC004873B0 /* VkViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -266,6 +272,7 @@
 		6A051B2E7812F1EAE7FA4EA7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B5E1B09622D5CBA2004873B0 /* WebKit.framework */,
 				93F0AB9F0B154205FA6BD568 /* Pods_WeatherApp.framework */,
 				16B1F1708EB571BCDBCC1A34 /* Pods_WeatherAppTests.framework */,
 				9698405A441A1A84F902C3E3 /* Pods_WeatherAppUITests.framework */,
@@ -283,7 +290,6 @@
 				714045F135BDDC2E19DF0B9D /* Pods-WeatherAppUITests.debug.xcconfig */,
 				49E36F89ED01AA5F587D8420 /* Pods-WeatherAppUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -513,6 +519,7 @@
 				49AE6824220B67EE002A5B73 /* OptionTableViewController.swift in Sources */,
 				4928BB9F220C1BF80060883D /* GroupTableViewController.swift in Sources */,
 				49BC6DDE221EA5C400273E72 /* PresentationDelegate.swift in Sources */,
+				B5E1B09922D5CFBC004873B0 /* VkViewController.swift in Sources */,
 				4959F533220D934C001858EC /* FeedTableViewCell.swift in Sources */,
 				49056EBD220943FD0013CA12 /* FriendTableViewCell.swift in Sources */,
 				4959F529220D7103001858EC /* OptionTwoTableViewCell.swift in Sources */,

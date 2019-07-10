@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1fu-Ty-5c9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1fu-Ty-5c9">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -368,6 +368,7 @@
                                     <outlet property="cityLabel" destination="yPU-F6-Vn6" id="vny-6j-vdn"/>
                                     <outlet property="generalLabel" destination="ogA-Hb-hoh" id="Ssz-St-yYy"/>
                                     <outlet property="nameLabel" destination="NIC-qZ-jo2" id="Bzj-kN-dfD"/>
+                                    <segue destination="qSq-cE-9oh" kind="show" id="bfa-cC-Hp1"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Exit" id="G7O-r9-AbG" customClass="OptionTableViewCell" customModule="WeatherApp" customModuleProvider="target">
@@ -406,6 +407,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W1H-gm-TIx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3708" y="2020.8395802098953"/>
+        </scene>
+        <!--Vk View Controller-->
+        <scene sceneID="gda-Db-3jh">
+            <objects>
+                <viewController id="qSq-cE-9oh" customClass="VkViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1fI-fy-lfw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sAF-og-VoT">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="502"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="sAF-og-VoT" firstAttribute="leading" secondItem="8YF-X4-046" secondAttribute="leading" id="a15-kN-M9R"/>
+                            <constraint firstItem="8YF-X4-046" firstAttribute="trailing" secondItem="sAF-og-VoT" secondAttribute="trailing" id="kTN-ul-bhn"/>
+                            <constraint firstItem="8YF-X4-046" firstAttribute="bottom" secondItem="sAF-og-VoT" secondAttribute="bottom" id="oiA-Bu-WSh"/>
+                            <constraint firstItem="sAF-og-VoT" firstAttribute="top" secondItem="8YF-X4-046" secondAttribute="top" id="rpD-P8-OIJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8YF-X4-046"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="sAF-og-VoT" id="mfv-22-8iU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fb3-zH-PGD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4594" y="2019"/>
         </scene>
         <!--Новости-->
         <scene sceneID="XXs-Of-JzU">
