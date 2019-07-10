@@ -13,6 +13,7 @@ import UIKit
 class CollectionViewController: UICollectionViewController {
     var friend = ""
     var image = ""
+    var sex = ""
 
 
     override func viewDidLoad() {
@@ -51,12 +52,10 @@ class CollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "itemCollection", for: indexPath) as! CollectionViewCell
-        cell.labelName.text = self.friend
-        cell.labelImage.image = UIImage(named: self.image)
+        cell.labelName?.text = self.friend
+        cell.labelImage?.image = UIImage(named: self.image)
+        cell.labelSex?.text = self.sex
         return cell
         
     }

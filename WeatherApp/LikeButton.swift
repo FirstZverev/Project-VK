@@ -12,7 +12,7 @@ import UIKit
 
 class LikeButton: UIControl {
     
-    var counter: Int = 10
+    var counter: Int = 756
     
     var isLiked: Bool = false {
         didSet {
@@ -76,6 +76,10 @@ class LikeButton: UIControl {
         
         if tap.location(in: self).x < self.frame.size.width / 2 {
             self.isLiked = !self.isLiked
+            UIView.animate(withDuration: 1, animations: {
+                
+            })
+            
         }
         
         
@@ -142,7 +146,7 @@ class LikeButton: UIControl {
     }
     
     private func updateCountLabel() {
-        let textColor = self.isLiked ? UIColor.black : UIColor.gray
+        let textColor = self.isLiked ? UIColor.black : UIColor.white
         self.countLabel?.textColor = textColor
         
         if self.isLiked {
@@ -150,7 +154,13 @@ class LikeButton: UIControl {
         } else {
             self.counter -= 1
         }
-        self.countLabel?.text = "\(self.counter)"
+        UIView.transition(with: countLabel!,
+                          duration: 0.5,
+                          options: .transitionFlipFromLeft,
+                          animations: {
+                             self.countLabel?.text = "\(self.counter)"
+        })
+        
     }
 }
 
