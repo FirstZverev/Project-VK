@@ -111,8 +111,10 @@ class LoginFormController: UIViewController {
     @objc func hideKeyboard() {
         self.scrollView?.endEditing(true)
     }
+    var vkService = VkService()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         self.scrollView?.alpha = 0
         

@@ -8,13 +8,29 @@
 
 import UIKit
 
+struct GroupsOne: CustomStringConvertible {
+    var description: String{
+        return "\(name)"
+    }
+    var name: String
+    var id: Int
+    var photo: String
+}
+
 class MyGroupTableViewController: UITableViewController {
     
     var myGroup = [String] ()
+    var vkService = VkService()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+//        let vk = vkService.requestGroups(completion: (([Groups]?,Error) -> Void)? = nil) {
+//            
+//            complition?(group, nil)
+//        }
+//        let groupfirst = vk.first
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -36,6 +52,7 @@ class MyGroupTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "labelMyGroup", for: indexPath) as! MyGroupTableViewCell
+        
         cell.labelMyGroup.text = myGroup[indexPath.row]
         return cell
     }
