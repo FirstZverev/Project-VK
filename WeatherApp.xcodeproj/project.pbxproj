@@ -44,6 +44,10 @@
 		4B91C74A5C04C580B2E1CF76 /* Pods_WeatherAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16B1F1708EB571BCDBCC1A34 /* Pods_WeatherAppTests.framework */; };
 		B5E1B09722D5CBA2004873B0 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E1B09622D5CBA2004873B0 /* WebKit.framework */; };
 		B5E1B09922D5CFBC004873B0 /* VkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E1B09822D5CFBC004873B0 /* VkViewController.swift */; };
+		B5E1B09B22D69699004873B0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E1B09A22D69699004873B0 /* User.swift */; };
+		B5E1B09D22D696C1004873B0 /* Groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E1B09C22D696C1004873B0 /* Groups.swift */; };
+		B5E1B09F22D696EA004873B0 /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E1B09E22D696EA004873B0 /* Photos.swift */; };
+		B5E1B0A122D69C08004873B0 /* VkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E1B0A022D69C08004873B0 /* VkService.swift */; };
 		BFCDAA791B82471E730D933D /* Pods_WeatherApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93F0AB9F0B154205FA6BD568 /* Pods_WeatherApp.framework */; };
 		E82498078D10B40C7B93364C /* Pods_WeatherAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9698405A441A1A84F902C3E3 /* Pods_WeatherAppUITests.framework */; };
 /* End PBXBuildFile section */
@@ -117,6 +121,10 @@
 		9698405A441A1A84F902C3E3 /* Pods_WeatherAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5E1B09622D5CBA2004873B0 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		B5E1B09822D5CFBC004873B0 /* VkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VkViewController.swift; sourceTree = "<group>"; };
+		B5E1B09A22D69699004873B0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = WeatherApp/Controller/User.swift; sourceTree = SOURCE_ROOT; };
+		B5E1B09C22D696C1004873B0 /* Groups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Groups.swift; path = WeatherApp/Controller/Groups.swift; sourceTree = SOURCE_ROOT; };
+		B5E1B09E22D696EA004873B0 /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Photos.swift; path = WeatherApp/Controller/Photos.swift; sourceTree = SOURCE_ROOT; };
+		B5E1B0A022D69C08004873B0 /* VkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VkService.swift; path = WeatherApp/Controller/VkService.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +159,10 @@
 		49120103221ABE6100E2DCF0 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				B5E1B09A22D69699004873B0 /* User.swift */,
+				B5E1B09C22D696C1004873B0 /* Groups.swift */,
+				B5E1B09E22D696EA004873B0 /* Photos.swift */,
+				B5E1B0A022D69C08004873B0 /* VkService.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -518,8 +530,10 @@
 				49120106221ABE8000E2DCF0 /* Loder.swift in Sources */,
 				49AE6824220B67EE002A5B73 /* OptionTableViewController.swift in Sources */,
 				4928BB9F220C1BF80060883D /* GroupTableViewController.swift in Sources */,
+				B5E1B09B22D69699004873B0 /* User.swift in Sources */,
 				49BC6DDE221EA5C400273E72 /* PresentationDelegate.swift in Sources */,
 				B5E1B09922D5CFBC004873B0 /* VkViewController.swift in Sources */,
+				B5E1B09D22D696C1004873B0 /* Groups.swift in Sources */,
 				4959F533220D934C001858EC /* FeedTableViewCell.swift in Sources */,
 				49056EBD220943FD0013CA12 /* FriendTableViewCell.swift in Sources */,
 				4959F529220D7103001858EC /* OptionTwoTableViewCell.swift in Sources */,
@@ -539,6 +553,8 @@
 				493FB033221327FB004805EF /* ClassGradient.swift in Sources */,
 				49BC6DDB221EA47200273E72 /* HintsViewController.swift in Sources */,
 				4959F531220D922B001858EC /* FeedTableViewController.swift in Sources */,
+				B5E1B09F22D696EA004873B0 /* Photos.swift in Sources */,
+				B5E1B0A122D69C08004873B0 /* VkService.swift in Sources */,
 				49BC6DE4221EA76700273E72 /* InteractiveClose.swift in Sources */,
 				4959F52D220D90EA001858EC /* LikeButton.swift in Sources */,
 				49056EBF22094AA80013CA12 /* FriendsTableViewController.swift in Sources */,

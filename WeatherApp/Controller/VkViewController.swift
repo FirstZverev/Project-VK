@@ -9,6 +9,31 @@
 import UIKit
 import WebKit
 import Alamofire
+import ObjectMapper
+import AlamofireObjectMapper
+import SwiftKeychainWrapper
+
+
+class VkResponse: Mappable {
+    var response: VkResponseInterval? = nil
+    
+    required init?(map: Map) {}
+    
+    func mapping(map: Map) {
+        response <- map["response"]
+    }
+}
+class VkResponseInterval: Mappable {
+    var items: [Groups] = []
+    
+    required init?(map: Map) {}
+    
+     func mapping(map: Map) {
+        items <- map["items"]
+    }
+    
+
+}
 
 class VkViewController: UIViewController, WKNavigationDelegate {
     
@@ -20,26 +45,18 @@ class VkViewController: UIViewController, WKNavigationDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        KeychainWrapper.standard.set("3e4c77bc7d774a61c745696e6d473af7675abb2b3fae610c216bc24bd54bf4e7436f8fea814ff52b9940b", forKey: "token")
+        let tokenVK = KeychainWrapper.standard.string(forKey: "token")
+        AF.request("https://api.vk.com/method/groups.get?extended=1&access_token=3e4c77bc7d774a61c745696e6d473af7675abb2b3fae610c216bc24bd54bf4e7436f8fea814ff52b9940b&v=5.95").responseObject(completionHandler: { (vkResponse: DataResponse<VkResponse>) in
+            let result = vkResponse.result
+            switch result {
+            case .success(let val): print(val.response?.items)
+            case .failure(let error): print(error)
+            }
+        })
         
-//        logoutVK()
-                //MARK: - VK Into
-                var urlComponents = URLComponents()
-                urlComponents.scheme = "https"
-                urlComponents.host = "oauth.vk.com"
-                urlComponents.path = "/authorize"
-                urlComponents.queryItems = [
-                    URLQueryItem(name: "client_id", value: "7051075"),
-                    URLQueryItem(name: "display", value: "mobile"),
-                    URLQueryItem(name: "redirect_uri", value: "https://oauth.vk.com/blank.html"),
-                    URLQueryItem(name: "scope", value: "262150"),
-                    URLQueryItem(name: "response_type", value: "token"),
-                    URLQueryItem(name: "v", value: "5.68")
-        ]
-        
-        let request = URLRequest(url: urlComponents.url!)
-        
-        webView.load(request)
     }
+        
     
     func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
         
@@ -62,26 +79,25 @@ class VkViewController: UIViewController, WKNavigationDelegate {
         let token = params["access_token"]
         
         print(token)
-        AF.request("https://api.vk.com/method/groups.get?&access_token=\(token!)&v=5.95").responseJSON { (response) in
+        AF.request("https://api.vk.com/method/groups.get?extended=1&access_token=\(token!)&v=5.95").responseJSON { (response) in
             print("СООБЩЕСТВА ПОЛЬЗОВАТЕЛЯ")
             print(response.value)
+            let tokenConst = "3e4c77bc7d774a61c745696e6d473af7675abb2b3fae610c216bc24bd54bf4e7436f8fea814ff52b9940b"
         }
+//
+//        AF.request("https://api.vk.com/method/groups.search?q=music&access_token=\(token!)&v=5.95").responseJSON { (response) in
+//            print("ПОИСК СООБЩЕСТВ")
+//            print(response.value)
+//        }
+//        AF.request("https://api.vk.com/method/friends.get?&access_token=\(token!)&v=5.95").responseJSON { (response) in
+//            print("ДРУЗЬЯ ПОЛЬЗОВАТЕЛЯ")
+//            print(response.value)
+//        }
+//        AF.request("https://api.vk.com/method/photos.getAll?&access_token=\(token!)&v=5.95").responseJSON { (response) in
+//            print("ФОТОГРАФИИ ПОЛЬЗОВАТЕЛЯ")
+//            print(response.value)
+//        }
 
-        AF.request("https://api.vk.com/method/groups.search?q=music&access_token=\(token!)&v=5.95").responseJSON { (response) in
-            print("ПОИСК СООБЩЕСТВ")
-            print(response.value)
-        }
-        AF.request("https://api.vk.com/method/friends.get?&access_token=\(token!)&v=5.95").responseJSON { (response) in
-            print("ДРУЗЬЯ ПОЛЬЗОВАТЕЛЯ")
-            print(response.value)
-        }
-        AF.request("https://api.vk.com/method/photos.getAll?&access_token=\(token!)&v=5.95").responseJSON { (response) in
-            print("ФОТОГРАФИИ ПОЛЬЗОВАТЕЛЯ")
-            print(response.value)
-        }
-
-        
-        
         decisionHandler(.cancel)
     }
     
