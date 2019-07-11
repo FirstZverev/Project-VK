@@ -6,6 +6,8 @@ target 'WeatherApp' do
   use_frameworks!
 
   pod 'Alamofire', '~> 5.0.0-beta.5'
+pod 'ObjectMapper', '~> 3.4'
+pod 'AlamofireObjectMapper'
 
   target 'WeatherAppTests' do
     inherit! :search_paths
