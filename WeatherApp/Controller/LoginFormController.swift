@@ -9,10 +9,25 @@
 import UIKit
 
 class LoginFormController: UIViewController {
-    @IBOutlet weak var scrollView: UIScrollView!
+    
+    @IBOutlet weak var scrollView: UIScrollView?
     @IBOutlet weak var loginInput: UITextField!
     @IBOutlet weak var passwordInput: UITextField!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var vkLabelName: UILabel?
+    
+    @IBOutlet weak var hintLabel: UILabel?
+    @IBOutlet weak var stackView: UIStackView?
+    @IBOutlet weak var hintLabelTopConstraint: NSLayoutConstraint?
+    @IBOutlet weak var hintLabelWidthConstraint: NSLayoutConstraint?
+    @IBOutlet weak var hintLabelHeightConstraint: NSLayoutConstraint?
+    @IBOutlet weak var loader: Loader?
+    
+
+
+    @IBAction func logoutAction(segue: UIStoryboardSegue?) {
+        self.scrollView?.alpha = 0
+    }
 
     // Когда клавиатура появляется
     @objc func keyboardWasShown(notification: Notification) {
@@ -34,6 +49,51 @@ class LoginFormController: UIViewController {
         scrollView?.contentInset = contentInsets
         scrollView?.scrollIndicatorInsets = contentInsets
     }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.loader?.start()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
+            self.loader?.stop()
+            self.loaderStopped()
+        })
+    }
+    func loaderStopped() {
+        UIView.animate(withDuration: 1,
+                       delay: 0,
+                       options: [.curveEaseOut],
+                       animations: {
+                        
+//                        self.hintLabel?.frame.origin.y = self.view.frame.size.height
+//
+//                        self.hintLabelTopConstraint?.constant = self.view.frame.size.height
+                        self.view.layoutIfNeeded()
+                        
+        }) { (finished: Bool) in
+            
+            UIView.animate(withDuration: 0.5, animations: {
+                self.scrollView?.alpha = 1
+//                self.animateTitleAppearing()
+//                self.vkLabelName?.frame.origin.x =
+            }, completion: { (finished: Bool) in
+//                self.animateShadow()
+            })
+        }
+    }
+//    func animateTitleAppearing() {
+//        self.vkLabelName?.transform = CGAffineTransform(translationX: 0,
+//                                                     y: -self.view.bounds.height/2)
+//
+//        UIView.animate(withDuration: 1,
+//                       delay: 1,
+//                       usingSpringWithDamping: 0.5,
+//                       initialSpringVelocity: 0,
+//                       options: .curveEaseOut,
+//                       animations: {
+//                        self.vkLabelName?.transform = .identity
+//        },
+//                       completion: nil)
+//    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -54,6 +114,8 @@ class LoginFormController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.scrollView?.alpha = 0
+        
         // жест нажатия
         let hideKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         // присваиваем его UIScrollVIew
@@ -66,14 +128,15 @@ class LoginFormController: UIViewController {
         let password = passwordInput.text!
         
         // Проверяем, верны ли они
-        if login == "admin" && password == "123456" {
+        if login == "" && password == "" {
             print("Успешная авторизация")
+            self.performSegue(withIdentifier: "openApp", sender: nil)
         } else {
             print("Неуспешная авторизация")
         }
     }
 
-
+    
 
     /*
     // MARK: - Navigation
@@ -86,3 +149,5 @@ class LoginFormController: UIViewController {
     */
 
 }
+
+
