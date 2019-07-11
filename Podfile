@@ -8,6 +8,7 @@ target 'WeatherApp' do
   pod 'Alamofire', '~> 5.0.0-beta.5'
 pod 'ObjectMapper', '~> 3.4'
 pod 'AlamofireObjectMapper'
+pod 'SwiftKeychainWrapper'
 
   target 'WeatherAppTests' do
     inherit! :search_paths

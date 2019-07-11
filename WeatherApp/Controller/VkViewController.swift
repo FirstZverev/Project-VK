@@ -11,6 +11,8 @@ import WebKit
 import Alamofire
 import ObjectMapper
 import AlamofireObjectMapper
+import SwiftKeychainWrapper
+
 
 class VkResponse: Mappable {
     var response: VkResponseInterval? = nil
@@ -43,6 +45,8 @@ class VkViewController: UIViewController, WKNavigationDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        KeychainWrapper.standard.set("3e4c77bc7d774a61c745696e6d473af7675abb2b3fae610c216bc24bd54bf4e7436f8fea814ff52b9940b", forKey: "token")
+        let tokenVK = KeychainWrapper.standard.string(forKey: "token")
         AF.request("https://api.vk.com/method/groups.get?extended=1&access_token=3e4c77bc7d774a61c745696e6d473af7675abb2b3fae610c216bc24bd54bf4e7436f8fea814ff52b9940b&v=5.95").responseObject(completionHandler: { (vkResponse: DataResponse<VkResponse>) in
             let result = vkResponse.result
             switch result {
